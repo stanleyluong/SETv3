@@ -1,0 +1,50 @@
+export const theme = {
+  colors: {
+    primary: '#2b6cb0',
+    secondary: '#38a169',
+    accent: '#e53e3e',
+    background: '#f7fafc',
+    text: '#1a202c',
+    cardBackground: '#ffffff',
+    selectedCard: '#fefcbf',
+    correctSet: '#c6f6d5',
+    incorrectSet: '#fed7d7',
+    navBackground: '#4299e1',
+  },
+  fonts: {
+    body: '"Roboto", sans-serif',
+    heading: '"Roboto", sans-serif',
+  },
+  breakpoints: {
+    sm: '576px',
+    md: '768px',
+    lg: '992px',
+    xl: '1200px',
+  },
+  spacing: {
+    xs: '0.25rem',
+    sm: '0.5rem',
+    md: '1rem',
+    lg: '1.5rem',
+    xl: '2rem',
+    xxl: '3rem',
+  },
+  borderRadius: {
+    xs: '0.125rem',
+    sm: '0.25rem',
+    md: '0.5rem',
+    lg: '1rem',
+    full: '9999px',
+  },
+  shadows: {
+    sm: '0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)',
+    md: '0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08)',
+    lg: '0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05)',
+    xl: '0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04)',
+  },
+  transitions: {
+    fast: '0.2s ease',
+    normal: '0.3s ease',
+    slow: '0.5s ease',
+  },
+};
