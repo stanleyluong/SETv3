@@ -51,6 +51,17 @@ const CardWrapper = styled.div`
   }
 `;
 
+// Function to get the base URL - handles both development and production
+const getBaseUrl = () => {
+  // Check if we're in development mode
+  if (import.meta.env.DEV) {
+    return '';
+  }
+  
+  // In production, use the correct base path
+  return import.meta.env.BASE_URL || '/SETv3/';
+};
+
 const Card = ({ 
   card, 
   width, 
@@ -66,6 +77,9 @@ const Card = ({
   if (isCorrect) status = 'correct';
   if (isIncorrect) status = 'incorrect';
 
+  // Get the base URL for assets
+  const baseUrl = getBaseUrl();
+
   return (
     <CardWrapper 
       width={width} 
@@ -75,7 +89,7 @@ const Card = ({
       onClick={() => onClick(card)}
     >
       <img 
-        src={`/images/${card.img}`} 
+        src={`${baseUrl}images/${card.img}`} 
         alt={`${card.number} ${card.shading} ${card.color} ${card.shape}`} 
       />
     </CardWrapper>

@@ -67,11 +67,25 @@ const CardImages = styled.div`
   }
 `;
 
+// Function to get the base URL - handles both development and production
+const getBaseUrl = () => {
+  // Check if we're in development mode
+  if (import.meta.env.DEV) {
+    return '';
+  }
+  
+  // In production, use the correct base path
+  return import.meta.env.BASE_URL || '/SETv3/';
+};
+
 const SetDisplay = ({ title, sets }) => {
   if (!sets || sets.length === 0) return null;
   
   // If there are many sets, just show the first few to save space
   const displaySets = sets.length > 8 ? sets.slice(0, 8) : sets;
+  
+  // Get the base URL for assets
+  const baseUrl = getBaseUrl();
   
   return (
     <Container>
@@ -83,7 +97,7 @@ const SetDisplay = ({ title, sets }) => {
               {set.map((card, index) => (
                 <img 
                   key={`${card.img}-${index}`} 
-                  src={`/images/${card.img}`}
+                  src={`${baseUrl}images/${card.img}`}
                   alt={`${card.number} ${card.shading} ${card.color} ${card.shape}`}
                 />
               ))}
