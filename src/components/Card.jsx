@@ -7,6 +7,7 @@ const CardWrapper = styled.div`
   justify-content: center;
   align-items: center;
   width: ${({ width }) => width || '100%'};
+  height: 100%;
   cursor: pointer;
   transition: transform ${({ theme }) => theme.transitions.fast};
   
@@ -16,35 +17,36 @@ const CardWrapper = styled.div`
 
   img {
     width: 100%;
-    height: auto;
-    border-radius: ${({ theme, cardSize }) => 
-      cardSize === 'large' 
+    height: 100%;
+    object-fit: contain;
+    border-radius: ${({ theme, $cardSize }) => 
+      $cardSize === 'large' 
         ? theme.borderRadius.md 
-        : cardSize === 'small' 
+        : $cardSize === 'small' 
           ? theme.borderRadius.xs 
           : theme.borderRadius.sm};
-    border: ${({ status, theme, cardSize }) => {
-      const color = status === 'selected' 
+    border: ${({ $status, theme, $cardSize }) => {
+      const color = $status === 'selected' 
         ? theme.colors.selectedCard 
-        : status === 'correct' 
+        : $status === 'correct' 
           ? theme.colors.correctSet 
-          : status === 'incorrect' 
+          : $status === 'incorrect' 
             ? theme.colors.incorrectSet 
             : theme.colors.cardBackground;
       
       // Border thickness based on size
-      const thickness = cardSize === 'large' 
+      const thickness = $cardSize === 'large' 
         ? '3px' 
-        : cardSize === 'small' 
+        : $cardSize === 'small' 
           ? '1px' 
           : '2px';
       
       return `${thickness} solid ${color}`;
     }};
-    box-shadow: ${({ theme, cardSize }) => 
-      cardSize === 'large' 
+    box-shadow: ${({ theme, $cardSize }) => 
+      $cardSize === 'large' 
         ? theme.shadows.md 
-        : cardSize === 'small' 
+        : $cardSize === 'small' 
           ? 'none' 
           : theme.shadows.sm};
     transition: border-color ${({ theme }) => theme.transitions.fast};
@@ -83,8 +85,8 @@ const Card = ({
   return (
     <CardWrapper 
       width={width} 
-      status={status}
-      cardSize={cardSize}
+      $status={status}
+      $cardSize={cardSize}
       className={className}
       onClick={() => onClick(card)}
     >

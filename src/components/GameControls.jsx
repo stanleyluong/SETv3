@@ -1,6 +1,6 @@
 import React from 'react';
+import { FaDesktop, FaEye, FaLightbulb, FaPlus, FaRedo, FaSearchMinus, FaSearchPlus, FaTrophy } from 'react-icons/fa';
 import styled from 'styled-components';
-import { FaPlus, FaRedo, FaLightbulb, FaEye, FaTrophy, FaSearchMinus, FaSearchPlus, FaMobile, FaDesktop, FaExpand } from 'react-icons/fa';
 
 const ControlsContainer = styled.div`
   display: flex;
@@ -17,13 +17,13 @@ const Button = styled.button`
   justify-content: center;
   gap: ${({ theme }) => theme.spacing.sm};
   padding: ${({ theme }) => theme.spacing.sm} ${({ theme }) => theme.spacing.md};
-  background-color: ${({ theme, variant }) => 
-    variant === 'primary' ? theme.colors.primary : 
-    variant === 'secondary' ? theme.colors.secondary : 
-    variant === 'accent' ? theme.colors.accent : 
+  background-color: ${({ theme, $variant }) => 
+    $variant === 'primary' ? theme.colors.primary : 
+    $variant === 'secondary' ? theme.colors.secondary : 
+    $variant === 'accent' ? theme.colors.accent : 
     theme.colors.background};
-  color: ${({ theme, variant }) => 
-    variant === 'primary' || variant === 'secondary' || variant === 'accent' 
+  color: ${({ theme, $variant }) => 
+    $variant === 'primary' || $variant === 'secondary' || $variant === 'accent' 
       ? '#ffffff' 
       : theme.colors.text};
   border-radius: ${({ theme }) => theme.borderRadius.sm};
@@ -85,22 +85,22 @@ const GameControls = ({
   
   return (
     <ControlsContainer>
-      <Button variant="primary" onClick={onNewGame}>
+      <Button $variant="primary" onClick={onNewGame}>
         <FaRedo />
         <span>New Game</span>
       </Button>
       
-      <Button variant="secondary" onClick={onDrawOne} disabled={deckEmpty}>
+      <Button $variant="secondary" onClick={onDrawOne} disabled={deckEmpty}>
         <FaPlus />
         <span>Draw 1</span>
       </Button>
       
-      <Button variant="secondary" onClick={onDrawThree} disabled={deckEmpty}>
+      <Button $variant="secondary" onClick={onDrawThree} disabled={deckEmpty}>
         <FaPlus />
         <span>Draw 3</span>
       </Button>
       
-      <Button variant={showHints ? 'accent' : undefined} onClick={onToggleHints}>
+      <Button $variant={showHints ? 'accent' : undefined} onClick={onToggleHints}>
         {showHints ? <FaEye /> : <FaLightbulb />}
         <span>{showHints ? 'Hide Hints' : 'Show Hints'}</span>
       </Button>
