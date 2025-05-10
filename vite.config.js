@@ -1,10 +1,8 @@
-import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vite';
 
-// Default to '/SETv3/' for production builds unless BASE_URL env var is set
-const base = process.env.NODE_ENV === 'production' 
-  ? (process.env.BASE_URL || '/SETv3/') 
-  : '/';
+// Always use root for base path for Amplify deployment
+const base = '/';
 
 export default defineConfig({
   plugins: [react()],
