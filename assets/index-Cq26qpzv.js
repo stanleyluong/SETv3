@@ -124,7 +124,7 @@ Error generating stack: `+l.message+`
     box-shadow: ${({theme:u,$cardSize:f})=>f==="large"?u.shadows.md:f==="small"?"none":u.shadows.sm};
     transition: border-color ${({theme:u})=>u.transitions.fast};
   }
-`,Mv=()=>"/SETv3/",Rv=({card:u,width:f,isSelected:r,isCorrect:s,isIncorrect:g,onClick:b,cardSize:x="medium",className:R})=>{let T="default";r&&(T="selected"),s&&(T="correct"),g&&(T="incorrect");const S=Mv();return z.jsx(_v,{width:f,$status:T,$cardSize:x,className:R,onClick:()=>b(u),children:z.jsx("img",{src:`${S}images/${u.img}`,alt:`${u.number} ${u.shading} ${u.color} ${u.shape}`})})},jv=tt.div`
+`,Mv=()=>"/",Rv=({card:u,width:f,isSelected:r,isCorrect:s,isIncorrect:g,onClick:b,cardSize:x="medium",className:R})=>{let T="default";r&&(T="selected"),s&&(T="correct"),g&&(T="incorrect");const S=Mv();return z.jsx(_v,{width:f,$status:T,$cardSize:x,className:R,onClick:()=>b(u),children:z.jsx("img",{src:`${S}images/${u.img}`,alt:`${u.number} ${u.shading} ${u.color} ${u.shape}`})})},jv=tt.div`
   display: grid;
   width: 100%;
   max-width: 1200px;
@@ -351,7 +351,7 @@ Error generating stack: `+l.message+`
     height: auto;
     border-radius: ${({theme:u})=>u.borderRadius.sm};
   }
-`,kv=()=>"/SETv3/",wh=({title:u,sets:f})=>{if(!f||f.length===0)return null;const r=f.length>8?f.slice(0,8):f,s=kv();return z.jsxs(Lv,{children:[z.jsxs(Vv,{children:[u," (",f.length,")"]}),z.jsx(Kv,{children:r.map((g,b)=>z.jsx($v,{children:z.jsx(Jv,{children:g.map((x,R)=>z.jsx("img",{src:`${s}images/${x.img}`,alt:`${x.number} ${x.shading} ${x.color} ${x.shape}`},`${x.img}-${R}`))})},`set-${b}`))})]})},Wv=tt.div`
+`,kv=()=>"/",wh=({title:u,sets:f})=>{if(!f||f.length===0)return null;const r=f.length>8?f.slice(0,8):f,s=kv();return z.jsxs(Lv,{children:[z.jsxs(Vv,{children:[u," (",f.length,")"]}),z.jsx(Kv,{children:r.map((g,b)=>z.jsx($v,{children:z.jsx(Jv,{children:g.map((x,R)=>z.jsx("img",{src:`${s}images/${x.img}`,alt:`${x.number} ${x.shading} ${x.color} ${x.shape}`},`${x.img}-${R}`))})},`set-${b}`))})]})},Wv=tt.div`
   position: fixed;
   top: 0;
   left: 0;
